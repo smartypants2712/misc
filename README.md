@@ -19,22 +19,22 @@ mvn help:evaluate –Dexpression=project.artifactId
 mvn help:evaluate –Dexpression=project.version
 ```
 
-#### Maven deploy
+##### Maven deploy
 ```
 mvn deploy:deploy-file -Durl=https://artifactory.mycompany.com:8080/snapshots/ -DrepositoryId=artifactory -Dfile=libvisacrypto.so -DgroupId=com.visa.cbp.sdk.arxan.libs.armeabi -DartifactId=libvisacrypto -Dversion=1.0-SNAPSHOT -X -e
 ```
 
-#### attempt to delete the local repository files but it always goes and fills up the local repository after things have been removed
+##### attempt to delete the local repository files but it always goes and fills up the local repository after things have been removed
 ```
 mvn dependency:purge-local-repository
 ```
 
-#### avoids the re-resolving of the dependencies but seems to still go to the network at times
+##### avoids the re-resolving of the dependencies but seems to still go to the network at times
 ```
 mvn dependency:purge-local-repository -DreResolve=false
 ```
 
-#### empty local repo
+##### empty local repo
 ```
 mvn dependency:purge-local-repository -DactTransitively=false -DreResolve=false
 ```
@@ -55,7 +55,7 @@ Bash
 `sudo systemctl stop firewalld`
 
 
-#### SSL Peer not authenicated exception
+##### SSL Peer not authenicated exception
 Run the following command, replace $ADDRESS with the URL, minus the "https://":
 ```
 echo -n | openssl s_client -connect $ADDRESS:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' > /tmp/$ADDRESS.cert
@@ -66,25 +66,25 @@ Run the following command, replace $ALIAS a short name for the key, $ADDRESS wit
 sudo keytool -importcert -alias "$ALIAS" -file /tmp/$ADDRESS.cert -keystore $PATH/cacerts -storepass changeit
 ```
 
-#### Get the contents of the first occurrence of someTag in XML file
+##### Get the contents of the first occurrence of someTag in XML file
 ```
 cat file | grep '<someTag>' | head -1 | sed "s/.*<someTag>\([^<]*\)<\/someTag>.*/\1/"`
 ```
 
-#### Netstat
+##### Netstat
 `netstat -tulpn`
 
-#### Console colors
+##### Console colors
 `echo -e "\e[0;32mTHIS TEXT IS GREEN\e[0m"`
 
-#### Generate random string
+##### Generate random string
 ```
 cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1
 ```
 
 Oracle
 ------
-#### Version:
+##### Version:
 ```
 select * from v$version;
 ```
