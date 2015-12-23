@@ -56,32 +56,36 @@ Bash
 
 
 #### SSL Peer not authenicated exception
-1. Run the following command, replace $ADDRESS with the URL, minus the "https://":
+Run the following command, replace $ADDRESS with the URL, minus the "https://":
 ```
 echo -n | openssl s_client -connect $ADDRESS:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' > /tmp/$ADDRESS.cert
 ```
 
-2. Run the following command, replace $ALIAS a short name for the key, $ADDRESS with the cert name from above, $PATH with the path to cacerts in your JRE.
+Run the following command, replace $ALIAS a short name for the key, $ADDRESS with the cert name from above, $PATH with the path to cacerts in your JRE.
 ```
 sudo keytool -importcert -alias "$ALIAS" -file /tmp/$ADDRESS.cert -keystore $PATH/cacerts -storepass changeit
 ```
 
-#### get the contents of the first occurrence of someTag in file
+#### Get the contents of the first occurrence of someTag in XML file
 ```
 cat file | grep '<someTag>' | head -1 | sed "s/.*<someTag>\([^<]*\)<\/someTag>.*/\1/"`
 ```
 
+#### Netstat
 `netstat -tulpn`
 
+#### Console colors
 `echo -e "\e[0;32mTHIS TEXT IS GREEN\e[0m"`
 
-#### random string
+#### Generate random string
 ```
 cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1
 ```
 
 Oracle
 ------
-Oracle version:
-`select * from v$version;`
+#### Version:
+```
+select * from v$version;
+```
 
