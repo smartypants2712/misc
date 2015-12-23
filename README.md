@@ -6,14 +6,14 @@ Maven
 For those who would like to know how to retrieve the maven coordinate information from pom file. This will come handy to check whether application is using master pom for the build.
 
 To retrieve maven coordinate for <parent> tag:
-mvn help:evaluate –Dexpression=project.parent.groupId
-mvn help:evaluate –Dexpression=project.parent.artifactId
-mvn help:evaluate –Dexpression=project.parent.version
+    mvn help:evaluate –Dexpression=project.parent.groupId
+    mvn help:evaluate –Dexpression=project.parent.artifactId
+    mvn help:evaluate –Dexpression=project.parent.version
 
 To retrieve maven coordinate for the project:
-mvn help:evaluate –Dexpression=project.groupId
-mvn help:evaluate –Dexpression=project.artifactId
-mvn help:evaluate –Dexpression=project.version
+    mvn help:evaluate –Dexpression=project.groupId
+    mvn help:evaluate –Dexpression=project.artifactId
+    mvn help:evaluate –Dexpression=project.version
 
 mvn deploy:deploy-file -Durl=https://artifactory.mycompany.com:8080/snapshots/ -DrepositoryId=artifactory -Dfile=libvisacrypto.so -DgroupId=com.visa.cbp.sdk.arxan.libs.armeabi -DartifactId=libvisacrypto -Dversion=1.0-SNAPSHOT -X -e
 
