@@ -13,7 +13,7 @@ mvn help:evaluate –Dexpression=project.groupId
 mvn help:evaluate –Dexpression=project.artifactId
 mvn help:evaluate –Dexpression=project.version
 
-mvn deploy:deploy-file -Durl=https://artifactory.trusted.visa.com:8443/snapshots/ -DrepositoryId=artifactory -Dfile=libvisacrypto.so -DgroupId=com.visa.cbp.sdk.arxan.libs.armeabi -DartifactId=libvisacrypto -Dversion=1.0-SNAPSHOT -X -e
+mvn deploy:deploy-file -Durl=https://artifactory.mycompany.com:8080/snapshots/ -DrepositoryId=artifactory -Dfile=libvisacrypto.so -DgroupId=com.visa.cbp.sdk.arxan.libs.armeabi -DartifactId=libvisacrypto -Dversion=1.0-SNAPSHOT -X -e
 
 find /usr/mware/was/.m2/repository/com/visa -type f -mtime +90 | xargs rm -vf
 find . -type f -mtime +30 | xargs rm -vf
