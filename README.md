@@ -21,7 +21,7 @@ mvn help:evaluate –Dexpression=project.version
 
 ##### Maven deploy
 ```
-mvn deploy:deploy-file -Durl=https://artifactory.mycompany.com:8080/snapshots/ -DrepositoryId=artifactory -Dfile=libvisacrypto.so -DgroupId=com.visa.cbp.sdk.arxan.libs.armeabi -DartifactId=libvisacrypto -Dversion=1.0-SNAPSHOT -X -e
+mvn deploy:deploy-file -Durl=https://artifactory.mycompany.com:8080/snapshots/ -DrepositoryId=artifactory -Dfile=libcrypto.so -DgroupId=com.mycompany.sdk.libs.armeabi -DartifactId=libcrypto -Dversion=1.0-SNAPSHOT -X -e
 ```
 
 ##### attempt to delete the local repository files but it always goes and fills up the local repository after things have been removed
